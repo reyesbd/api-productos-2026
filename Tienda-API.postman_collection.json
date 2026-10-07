@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "Tienda API",
+    "description": "Colección de pruebas para la API REST de productos y categorías.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }],
+  "item": [
+    {
+      "name": "Categorías",
+      "item": [
+        {"name":"Listar categorías","request":{"method":"GET","url":"{{baseUrl}}/api/categorias"}},
+        {"name":"Crear categoría","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"nombre\": \"Componentes\"\n}"},"url":"{{baseUrl}}/api/categorias"}},
+        {"name":"Obtener categoría","request":{"method":"GET","url":"{{baseUrl}}/api/categorias/1"}},
+        {"name":"Productos de categoría","request":{"method":"GET","url":"{{baseUrl}}/api/categorias/1/productos"}}
+      ]
+    },
+    {
+      "name": "Productos",
+      "item": [
+        {"name":"Listar productos","request":{"method":"GET","url":"{{baseUrl}}/api/productos"}},
+        {"name":"Crear producto","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"nombre\": \"Hub USB-C 7 en 1\",\n  \"precio\": 899.00,\n  \"categoriaId\": 10\n}"},"url":"{{baseUrl}}/api/productos"}},
+        {"name":"Buscar Logitech","request":{"method":"GET","url":"{{baseUrl}}/api/productos?buscar=logitech"}},
+        {"name":"Filtrar Monitores","request":{"method":"GET","url":"{{baseUrl}}/api/productos?categoria=Monitores"}},
+        {"name":"Filtrar precio","request":{"method":"GET","url":"{{baseUrl}}/api/productos?precioMin=1000&precioMax=5000"}},
+        {"name":"Paginación","request":{"method":"GET","url":"{{baseUrl}}/api/productos?page=1&limit=5"}}
+      ]
+    }
+  ]
+}

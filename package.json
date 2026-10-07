@@ -1,0 +1,28 @@
+{
+  "name": "tienda-api",
+  "version": "1.0.0",
+  "description": "API REST didáctica para una tienda de equipo y accesorios de cómputo usando Node.js 24, Express, Prisma ORM 7 y SQLite.",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node --watch src/app.js",
+    "start": "node src/app.js",
+    "prisma:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "node prisma/seed.js",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "7.10.0"
+  }
+}
