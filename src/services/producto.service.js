@@ -1,4 +1,4 @@
-import { prisma } from "../lib/prisma.js";
+import  prisma  from "../lib/prisma.js";
 
 export const productoService = {
   async listar({ categoria, precioMin, precioMax, buscar, page = 1, limit = 10 }) {
